@@ -1,0 +1,25 @@
+{
+  "name": "@pyro/evm-sdk",
+  "version": "0.0.1",
+  "description": "EVM SDK for Pyro",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "lint": "eslint src --ext .ts"
+  },
+  "dependencies": {
+    "@pyro/core": "workspace:*",
+    "@pyro/utils": "workspace:*",
+    "ethers": "^6.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  },
+  "files": [
+    "dist"
+  ]
+}
+

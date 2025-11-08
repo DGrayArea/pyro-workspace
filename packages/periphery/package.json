@@ -1,0 +1,23 @@
+{
+  "name": "@pyro/periphery",
+  "version": "0.0.1",
+  "description": "Periphery contracts and utilities for Pyro",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "lint": "eslint src --ext .ts"
+  },
+  "dependencies": {
+    "@pyro/core": "workspace:*",
+    "@pyro/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "files": [
+    "dist"
+  ]
+}
+
