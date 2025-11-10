@@ -2,52 +2,53 @@
  * @pyro/utils - Utility functions for Pyro SDK
  */
 
-/**
- * Convert various number formats to hex string
- */
+export * from "./logger";
 export function toHex(value: string | number | bigint | Uint8Array): string {
   if (value instanceof Uint8Array) {
     return bytesToHex(value);
   }
-  if (typeof value === 'bigint') {
-    return '0x' + value.toString(16);
+  if (typeof value === "bigint") {
+    return "0x" + value.toString(16);
   }
-  if (typeof value === 'number') {
-    return '0x' + value.toString(16);
+  if (typeof value === "number") {
+    return "0x" + value.toString(16);
   }
-  if (typeof value === 'string') {
-    if (value.startsWith('0x')) {
+  if (typeof value === "string") {
+    if (value.startsWith("0x")) {
       return value;
     }
-    return '0x' + BigInt(value).toString(16);
+    return "0x" + BigInt(value).toString(16);
   }
-  throw new Error('Invalid value type for hex conversion');
+  throw new Error(`Invalid value type for hex conversion: ${typeof value}`);
 }
 
 /**
  * Convert hex string to bigint
  */
 export function hexToBigInt(hex: string): bigint {
-  if (hex.startsWith('0x')) {
+  if (hex.startsWith("0x")) {
     return BigInt(hex);
   }
-  return BigInt('0x' + hex);
+  return BigInt("0x" + hex);
 }
 
 /**
  * Convert bytes to hex string
  */
 export function bytesToHex(bytes: Uint8Array): string {
-  return '0x' + Array.from(bytes)
-    .map(b => b.toString(16).padStart(2, '0'))
-    .join('');
+  return (
+    "0x" +
+    Array.from(bytes)
+      .map((b) => b.toString(16).padStart(2, "0"))
+      .join("")
+  );
 }
 
 /**
  * Convert hex string to bytes
  */
 export function hexToBytes(hex: string): Uint8Array {
-  const cleanHex = hex.startsWith('0x') ? hex.slice(2) : hex;
+  const cleanHex = hex.startsWith("0x") ? hex.slice(2) : hex;
   const bytes = new Uint8Array(cleanHex.length / 2);
   for (let i = 0; i < cleanHex.length; i += 2) {
     bytes[i / 2] = parseInt(cleanHex.substr(i, 2), 16);
@@ -59,7 +60,7 @@ export function hexToBytes(hex: string): Uint8Array {
  * Sleep utility
  */
 export function sleep(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 /**
@@ -83,4 +84,3 @@ export async function retry<T>(
   }
   throw lastError!;
 }
-

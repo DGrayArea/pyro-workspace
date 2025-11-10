@@ -18,7 +18,7 @@ export interface FlashloanResult {
  * Execute a flashloan (placeholder for future implementation)
  */
 export async function executeFlashloan(
-  params: FlashloanParams
+  _params: FlashloanParams
 ): Promise<FlashloanResult> {
   // Placeholder - actual implementation would:
   // 1. Initiate flashloan from protocol (Aave, dYdX, etc.)

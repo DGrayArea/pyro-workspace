@@ -14,13 +14,12 @@ export interface SimulationResult {
  * Simulate a transaction (placeholder for future implementation)
  */
 export async function simulateTransaction(
-  provider: any,
-  transaction: any
+  _provider: any,
+  _transaction: any
 ): Promise<SimulationResult> {
   // Placeholder - actual implementation would use provider's simulate/call methods
   // For EVM: provider.call()
   // For Solana: connection.simulateTransaction()
-  
-  throw new Error('Simulation not yet implemented');
-}
 
+  throw new Error("Simulation not yet implemented");
+}

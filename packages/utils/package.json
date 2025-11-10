@@ -1,22 +1,54 @@
 {
-  "name": "@pyro/utils",
+  "name": "@pyro-labs/utils",
   "version": "0.0.1",
   "description": "Utility functions for Pyro SDK",
   "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist",
-    "lint": "eslint src --ext .ts"
+    "lint": "eslint src --ext .ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm build"
+  },
+  "keywords": [
+    "pyro",
+    "sdk",
+    "blockchain",
+    "utilities",
+    "logger"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DGrayArea/pyro-workspace.git",
+    "directory": "packages/utils"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
-    "@pyro/core": "workspace:*"
+    "@pyro-labs/core": "workspace:*"
   },
   "devDependencies": {
-    "typescript": "^5.3.3"
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.0.0"
   },
   "files": [
     "dist"
   ]
 }
-

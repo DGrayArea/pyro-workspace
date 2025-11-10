@@ -1,5 +1,5 @@
 {
-  "name": "@pyro/workspace",
+  "name": "@pyro-labs/workspace",
   "version": "0.0.1",
   "private": true,
   "description": "Pyro SDK monorepo",
@@ -7,14 +7,17 @@
     "build": "pnpm -r build",
     "clean": "pnpm -r clean",
     "test": "pnpm -r test",
-    "lint": "pnpm -r lint"
+    "test:watch": "pnpm -r test:watch",
+    "test:coverage": "pnpm -r test:coverage",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vitest": "^1.0.0"
   },
   "engines": {
     "node": ">=18.0.0"
   }
 }
-

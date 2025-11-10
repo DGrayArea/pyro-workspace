@@ -28,7 +28,7 @@ export interface AggregatedQuote {
 /**
  * Get quotes from multiple DEX versions and fee tiers
  */
-export async function getQuotes(request: QuoteRequest): Promise<AggregatedQuote> {
+export async function getQuotes(_request: QuoteRequest): Promise<AggregatedQuote> {
   // Placeholder implementation
   // In production, this would:
   // 1. Query multiple DEX versions (Uniswap V2, V3, etc.)

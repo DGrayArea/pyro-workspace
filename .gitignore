@@ -6,3 +6,6 @@ dist
 .env.local
 *.tsbuildinfo
 
+# Internal development documentation (do not commit)
+DEVELOPMENT.md
+

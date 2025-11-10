@@ -2,8 +2,8 @@
  * Fee wrapper utilities for Pyro
  */
 
-import { FeeWrapperConfig, WrappedTransaction } from '@pyro/core';
-import { toHex, bytesToHex } from '@pyro/utils';
+import { FeeWrapperConfig, WrappedTransaction } from '@pyro-labs/core';
+import { bytesToHex } from '@pyro-labs/utils';
 
 /**
  * Wrap a transaction with Pyro fee
