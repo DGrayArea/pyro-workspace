@@ -154,11 +154,15 @@ export class EVMSDK {
         throw new ValidationError("Invalid recipient address", "to", { to });
       }
 
+      // Convert to BigInt for validation
+      const value = typeof amount === "bigint" ? amount : BigInt(amount || "0");
+      
       if (
         amount === undefined ||
         amount === null ||
         amount === "" ||
-        amount === BigInt(0)
+        amount === "0" ||
+        value === BigInt(0)
       ) {
         throw new ValidationError(
           "Amount must be greater than zero",
@@ -181,7 +185,6 @@ export class EVMSDK {
       });
 
       const connectedWallet = wallet.connect(this.provider);
-      const value = typeof amount === "bigint" ? amount : BigInt(amount);
 
       let txResponse: TransactionResponse;
 
