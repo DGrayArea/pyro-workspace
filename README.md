@@ -1,4 +1,4 @@
-# Pyro SDK
+# Pyro-Labs SDK
 
 A comprehensive TypeScript SDK for interacting with Solana and EVM chains. Send transactions, interact with smart contracts, and build cross-chain applications with ease.
 
