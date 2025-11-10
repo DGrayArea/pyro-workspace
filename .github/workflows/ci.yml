@@ -18,7 +18,8 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 10
+          package-json-path: package.json
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -50,7 +51,8 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 10
+          package-json-path: package.json
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -84,7 +86,8 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 10
+          package-json-path: package.json
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -110,7 +113,8 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 10
+          package-json-path: package.json
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
